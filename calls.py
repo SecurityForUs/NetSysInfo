@@ -50,7 +50,7 @@ class Calls(object):
 		if maxv != None and reg_vmm.match(maxv) != None:
 			return ""
 
-		perf = "%s;%s;%s;%s" % (str(warn), str(crit), str(minv), str(maxv))
+		perf = "'%s'=%s;%s;%s;%s;%s;%s" % (str(label), str(value), str(uom),  str(warn), str(crit), str(minv), str(maxv))
 
 		return perf
 		
