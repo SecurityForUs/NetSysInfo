@@ -30,7 +30,7 @@ class DB(object):
 		cols = ""
 		vals = ()
 		data = kwargs
-		
+
 		for key, val in data.iteritems():
 			if q == "":
 				q = "?"
@@ -72,6 +72,10 @@ class DB(object):
 
 		self.c.execute(q)
 		self.row = self.c.fetchone()
+
+	# Apparently del doesn't call __del__ immediately all the time, this is kind of a hack to work with that
+	def close(self):
+		self.__del__()
 
 	def __getitem__(self, key):
 		parts = key.split("|")

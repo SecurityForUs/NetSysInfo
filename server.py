@@ -11,7 +11,7 @@ from calls import CallManager
 # Start up and initialize our database
 db = DB()
 db.init()
-
+"""
 d = db.insert("hosts", date="hi",host="fuck")
 
 #print "new row id:",db.id
@@ -21,7 +21,7 @@ print "info =",info
 print "id of record:",db.id
 
 #db.delete("hosts")
-
+"""
 # Terminate database connection (cheeky?)
 del db
 
